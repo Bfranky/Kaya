@@ -21,6 +21,7 @@ export interface Product {
   id: string;
   businessId: string;
   name: string;
+  imageUrl?: string;
   photoUrl?: string;
   unitsPerCarton: number;
   costPrice: number;
@@ -41,9 +42,12 @@ export interface Customer {
   id: string;
   businessId: string;
   name: string;
-  phone: string;
+  phone: string; // normal call number
+  whatsappPhone?: string; // whatsapp number
   creditLimit?: number;
   currentBalance: number; // positive means owes money (debtor)
+  isRegular?: boolean; // regular buyer from store
+  purchaseCount?: number; // total purchases made
   notes?: string;
   createdAt: string;
 }
